@@ -47,7 +47,6 @@ jspm_packages
 .yarn-integrity
 
 #editor related folders
-.vscode
 .idea
 
 # environment files
