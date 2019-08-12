@@ -1,5 +1,7 @@
-function Home() {
-  return <div>Welcome to Next.js!</div>;
-}
+import React from 'react';
 
-export default Home;
+import App from '../components/App/App';
+
+export default () => {
+  return <App />;
+};

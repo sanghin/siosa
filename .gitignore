@@ -1,3 +1,6 @@
+# build
+app/.next
+
 # Logs
 logs
 *.log

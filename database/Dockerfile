@@ -1,5 +1,5 @@
-FROM postgres:11.1-alpine
+FROM mongo:4.0.12-xenial
 
-ADD ./setup.sh /docker-entrypoint-initdb.d
+ADD ./setup.js /setup.js
 
 EXPOSE 5432
