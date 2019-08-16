@@ -1,12 +1,7 @@
 version: '3.7'
-
 services:
-  mongo:
-    image: mongo:4.0.12-xenial
-    container_name: siosa_mongo
-    restart: always
-    ports:
-      - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base

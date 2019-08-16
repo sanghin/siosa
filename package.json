@@ -1,10 +1,14 @@
 {
   "private": true,
   "workspaces": [
-    "scraper",
     "app",
     "@core/*"
   ],
+  "scripts": {
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build",
+    "docker:dev:detached": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d",
+    "app:dev": "node ./app/index.js"
+  },
   "dependencies": {
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",

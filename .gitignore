@@ -1,5 +1,6 @@
 # build
 app/.next
+.next
 
 # Logs
 logs
