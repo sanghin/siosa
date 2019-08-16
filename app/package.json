@@ -8,11 +8,19 @@
   },
   "dependencies": {
     "@types/node": "^12.6.9",
+    "@types/node-fetch": "^2.5.0",
     "@types/react": "^16.9.1",
+    "@types/xml2json": "^0.10.0",
     "@zeit/next-typescript": "^1.1.1",
+    "dotenv": "^8.0.0",
+    "mongoose": "^5.6.9",
     "next": "^9.0.3",
+    "next-compose-plugins": "^2.2.0",
+    "node-fetch": "^2.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "xml2json": "^0.11.2",
+    "zlib": "^1.0.5"
   }
 }

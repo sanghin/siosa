@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose');
 
 const BuildSchema = new Schema({
-  pob: Object,
+  PathOfBuilding: Object,
   importedAt: Date,
 });
 

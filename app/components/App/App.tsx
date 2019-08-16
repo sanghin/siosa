@@ -1,13 +1,11 @@
 import React, { KeyboardEvent, ChangeEvent, useState } from 'react';
 
-const isPastebinLink = value => /^https:\/\/pastebin\.com\//.test(value);
-
 export default () => {
   const [value, setInputValue] = useState<string>('');
   const [submitting, setSubmitting] = useState<boolean>(false);
 
   const onKeyDown = async (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.keyCode === 13 && isPastebinLink(value) && !submitting) {
+    if (event.keyCode === 13 && !submitting) {
       setSubmitting(true);
 
       await fetch('/api/pastebin', { method: 'POST', body: `${value}` });
