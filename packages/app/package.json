@@ -1,6 +1,6 @@
 {
+  "private": true,
   "name": "app",
-  "version": "1.0.0",
   "scripts": {
     "dev": "node index.js",
     "build": "node build index.js",
@@ -16,6 +16,7 @@
     "mongoose": "^5.6.9",
     "next": "^9.0.3",
     "next-compose-plugins": "^2.2.0",
+    "next-transpile-modules": "^2.3.1",
     "node-fetch": "^2.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

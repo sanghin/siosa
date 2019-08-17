@@ -3,13 +3,14 @@
 set -e
 
 mongo <<EOF
-db.getSiblingDB('$MONGO_INITDB_DATABASE')
+use $MONGO_DATABASE
+db.createCollection('builds')
 db.createUser({
-  user: 'siosa_user',
-  pwd: 'password',
+  user: '$MONGO_USER',
+  pwd: '$MONGO_PASSWORD',
   roles: [{
     role: 'readWrite',
-    db: 'local'
+    db: '$MONGO_DATABASE'
   }],
    mechanisms: [ "SCRAM-SHA-1" ]
 })

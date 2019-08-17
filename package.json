@@ -1,13 +1,12 @@
 {
   "private": true,
   "workspaces": [
-    "app",
-    "@core/*"
+    "packages/*"
   ],
   "scripts": {
     "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build",
     "docker:dev:detached": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d",
-    "app:dev": "node ./app/index.js"
+    "app:dev": "yarn --cwd packages/app dev"
   },
   "dependencies": {
     "eslint": "^6.1.0",
