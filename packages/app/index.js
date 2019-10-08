@@ -16,7 +16,8 @@ const MONGODB_URL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${M
 app.prepare().then(async () => {
   try {
     await mongoose.connect(MONGODB_URL, { useNewUrlParser: true });
-    console.log('mongo connexion succeed');
+    // eslint-disable-next-line no-console
+    console.info('mongo connexion succeed');
   } catch (e) {
     console.error('mongo connexion failed', e);
   }
@@ -27,6 +28,7 @@ app.prepare().then(async () => {
     handle(req, res, parsedUrl);
   }).listen(port, err => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+    // eslint-disable-next-line no-console
+    console.info(`> Ready on http://localhost:${port}`);
   });
 });

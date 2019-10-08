@@ -1,22 +1,22 @@
 version: '3.7'
 services:
   server:
-  container_name: siosa_node
-  user: 1000:1000
-  volumes:
-    - .:/app
-  command: sh -c "yarn --production=false && yarn app:dev"
-  environment:
-    NODE_ENV: '${NODE_ENV}'
-    MONGO_INITDB_ROOT_USERNAME: '${MONGO_INITDB_ROOT_USERNAME}'
-    MONGO_INITDB_ROOT_PASSWORD: '${MONGO_INITDB_ROOT_PASSWORD}'
-    MONGO_HOST: '${MONGO_HOST}'
-    MONGO_PORT: '${MONGO_PORT}'
-    MONGO_DATABASE: '${MONGO_DATABASE}'
-  ports:
-    - '${PORT}:${PORT}'
-  links:
-    - mongo
+    container_name: siosa_node
+    user: 1000:1000
+    volumes:
+      - .:/app
+    command: sh -c "yarn --production=false && yarn app:dev"
+    environment:
+      NODE_ENV: '${NODE_ENV}'
+      MONGO_INITDB_ROOT_USERNAME: '${MONGO_INITDB_ROOT_USERNAME}'
+      MONGO_INITDB_ROOT_PASSWORD: '${MONGO_INITDB_ROOT_PASSWORD}'
+      MONGO_HOST: '${MONGO_HOST}'
+      MONGO_PORT: '${MONGO_PORT}'
+      MONGO_DATABASE: '${MONGO_DATABASE}'
+    ports:
+      - '${PORT}:${PORT}'
+    links:
+      - mongo
 
   mongo:
     image: mongo:4.0.12-xenial
