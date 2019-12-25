@@ -35,6 +35,7 @@
     "yarn": "^1.21.0"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "bookshelf": "^1.0.1",
     "dotenv": "^8.2.0",
     "knex": "^0.20.4",
