@@ -1,9 +1,0 @@
-.dropdown option::before {
-  content: '☐ ';
-}
-.dropdown option:checked:before {
-  content: '☑ ';
-}
-
-.dropdown  {
-}

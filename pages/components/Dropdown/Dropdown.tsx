@@ -1,18 +1,25 @@
-import css from './styles.css';
+type option = { label?: string | number; value: string | number };
 
 type Props = {
   className?: string;
-  options: Array<{ label?: string | number; value: string | number }>;
+  options: Array<option>;
   size?: number;
+  placeholder?: string;
 };
 
-export default ({ className, options, size = 5 }: Props) => {
-  const concatclassName = className ? `${className} ${css.dropdown}` : css.dropdown;
-
+export default ({ className, options, size = 1, placeholder }: Props) => {
   return (
-    <select multiple size={size} className={concatclassName}>
-      {options.map(({ label, value }) => (
-        <option value={value}>{label || value}</option>
+    <select size={size} className={className}>
+      {placeholder ? (
+        <option value='' disabled selected>
+          {placeholder}
+        </option>
+      ) : null}
+
+      {options.map(({ label, value }, index) => (
+        <option key={`${index}${value}`} value={value}>
+          {label || value}
+        </option>
       ))}
     </select>
   );
