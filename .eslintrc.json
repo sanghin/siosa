@@ -19,6 +19,8 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "wrap-iife": ["error", "inside"],
+    "no-console": [2, { "allow": ["info", "error"] }],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx"] }]
