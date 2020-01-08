@@ -252,6 +252,14 @@ export default () => {
       <Dropdown options={ascendancies} placeholder='Ascendancy' />
       <Dropdown options={skills} placeholder='Skill gem' />
       <input placeholder='Items' disabled />
+      <div>
+        <input type='checkbox' />
+        <label>SSF</label>
+      </div>
+      <div>
+        <input type='checkbox' />
+        <label>Hardcore</label>
+      </div>
     </div>
   );
 };
