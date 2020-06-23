@@ -31,14 +31,12 @@
     }
   },
   "engines": {
-    "node": "^13.5.0",
+    "node": "^14.3.0",
     "yarn": "^1.21.0"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
-    "bookshelf": "^1.0.1",
     "dotenv": "^8.2.0",
-    "knex": "^0.20.4",
     "next": "^9.4.4",
     "node-fetch": "^2.6.0",
     "pg": "^8.2.1",

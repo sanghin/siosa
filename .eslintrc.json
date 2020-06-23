@@ -4,7 +4,10 @@
     "es6": true,
     "node": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -17,23 +20,37 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
       }
     }
   },
   "rules": {
-    "jsx-quotes": [2, "prefer-double"],
+    "jsx-quotes": [
+      2,
+      "prefer-double"
+    ],
     "react/react-in-jsx-scope": "off", // don't need this rule in Nextjs context
-    "no-unused-vars": "off",
+    "wrap-iife": "outside",
     "@typescript-eslint/no-unused-vars": "error",
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [".jsx", ".tsx"]
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
       }
     ],
     "no-restricted-syntax": "off",

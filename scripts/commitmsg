@@ -13,7 +13,7 @@ const fetchAndCacheGitmojis = async () => {
   try {
     const data = await fetch(GITMOJIS_URL).then(r => r.json());
     const emojis = data.gitmojis.reduce((list, gitmoji) => {
-      if (gitmoji && gitmoji.name) list.push(gitmoji.name.replace(/-/, '_'));
+      if (gitmoji && gitmoji.name) list.push(gitmoji.name.replace(/-/g, '_'));
 
       return list;
     }, []);
@@ -31,6 +31,7 @@ const fetchAndCacheGitmojis = async () => {
     process.exit(1);
   }
 };
+
 const getGitmojisFromCache = () => JSON.parse(readFileSync(CACHE_FILE_PATH));
 
 (async function main() {
@@ -39,6 +40,14 @@ const getGitmojisFromCache = () => JSON.parse(readFileSync(CACHE_FILE_PATH));
   const COMMIT_MESSAGE = process.argv[2];
   const input = readFileSync(COMMIT_MESSAGE, 'utf8').replace(/\n/g, '');
   const match = input.match(/^:(\w{1,50}):/);
+
+  if (gitmojisList.includes(match[1])) {
+    console.log('Valid commit message');
+    process.exit(0);
+  }
+
+  // force clear cache to be sure we have the latest emoji list
+  await fetchAndCacheGitmojis()
 
   if (gitmojisList.includes(match[1])) {
     console.log('Valid commit message');
