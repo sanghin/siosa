@@ -1,62 +1,70 @@
 {
-  "name": "siosa",
-  "version": "0.0.1",
-  "description": "Path Of Exile build library",
-  "bugs": "https://github.com/sanghin/siosa/issues",
-  "repository": "github:sanghin/siosa",
-  "license": "MIT",
-  "keywords": [
-    "path of exile",
-    "poe",
-    "search",
-    "tool",
-    "library",
-    "build"
-  ],
-  "author": "Sanghin",
-  "contributors": [
-    "Luc Tribolet <luc.tribolet@gmail.com> (https://tribolet.fr)"
-  ],
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint-fix": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "knex": "$(yarn bin)/knex --knexfile ./server/database/knexfile.ts"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "scripts/commitmsg $HUSKY_GIT_PARAMS"
-    }
-  },
-  "engines": {
-    "node": "^14.3.0",
-    "yarn": "^1.21.0"
-  },
-  "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "dotenv": "^8.2.0",
-    "next": "^9.4.4",
-    "node-fetch": "^2.6.0",
-    "pg": "^8.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "xml2json": "^0.12.0"
-  },
-  "devDependencies": {
-    "@types/node": "^14.0.13",
-    "@types/react": "^16.9.38",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
-    "@typescript-eslint/parser": "^3.4.0",
-    "eslint": "^7.3.1",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
-    "gitmoji-cli": "^3.2.6",
-    "husky": "^4.2.5",
-    "typescript": "^3.9.5"
-  }
+   "name": "siosa",
+   "version": "0.0.1",
+   "description": "Path Of Exile build library",
+   "bugs": "https://github.com/sanghin/siosa/issues",
+   "repository": "github:sanghin/siosa",
+   "license": "MIT",
+   "keywords": [
+      "path of exile",
+      "poe",
+      "search",
+      "tool",
+      "library",
+      "build"
+   ],
+   "author": "Sanghin",
+   "contributors": [
+      "Luc Tribolet <luc.tribolet@gmail.com> (https://tribolet.fr)"
+   ],
+   "scripts": {
+      "dev": "NODE_ENV=DEVELOPMENT ts-node server/index.ts",
+      "build": "next build",
+      "start": "ts-node server/index.ts",
+      "lint": "npx eslint . --ext .ts,.tsx",
+      "lint-fix": "npx eslint . --fix --ext .ts,.tsx"
+   },
+   "husky": {
+      "hooks": {
+         "commit-msg": "scripts/commitmsg $HUSKY_GIT_PARAMS"
+      }
+   },
+   "engines": {
+      "node": "^14.3.0",
+      "yarn": "^1.21.0"
+   },
+   "dependencies": {
+      "@babel/plugin-proposal-decorators": "^7.10.3",
+      "@zeit/next-css": "^1.0.1",
+      "dotenv": "^8.2.0",
+      "mysql": "^2.14.1",
+      "next": "^9.4.4",
+      "node-fetch": "^2.6.0",
+      "pg": "^8.2.1",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.25",
+      "typeorm-naming-strategies": "^1.1.0",
+      "xml2json": "^0.12.0"
+   },
+   "devDependencies": {
+      "@types/node": "^8.0.29",
+      "@types/react": "^16.9.38",
+      "@typescript-eslint/eslint-plugin": "^3.4.0",
+      "@typescript-eslint/parser": "^3.4.0",
+      "eslint": "^7.3.1",
+      "eslint-config-airbnb": "^18.2.0",
+      "eslint-config-prettier": "^6.11.0",
+      "eslint-plugin-import": "^2.21.2",
+      "eslint-plugin-jsx-a11y": "^6.3.1",
+      "eslint-plugin-prettier": "^3.1.4",
+      "eslint-plugin-react": "^7.20.0",
+      "eslint-plugin-react-hooks": "^4.0.4",
+      "gitmoji-cli": "^3.2.6",
+      "husky": "^4.2.5",
+      "prettier": "^2.0.5",
+      "ts-node": "3.3.0",
+      "typescript": "3.3.3333"
+   }
 }

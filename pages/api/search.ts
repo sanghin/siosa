@@ -1,23 +1,31 @@
-import knex from '../../server/database/db';
+import "reflect-metadata";
+
+import { getConnection } from "typeorm";
+import Build from "../../server/entity/Build";
 
 const Search = async (request, response) => {
-  const params: SearchParams = request.method === 'POST' ? JSON.parse(request.body) : request.query;
-  const qb = knex('build');
+  const params: SearchParams =
+    request.method === "POST" ? JSON.parse(request.body) : request.query;
+
+  const qb = await getConnection()
+    .createQueryBuilder()
+    .select("build")
+    .from(Build, "build");
 
   const keys = Object.keys(params);
   for (const param of keys) {
     const value = params[param];
 
-    if (param === 'ascendancy') {
-      qb.whereRaw(
+    if (param === "ascendancy") {
+      qb.where(
         "pob->'PathOfBuilding'->'Build'->>'ascendClassName' = ?",
-        value.charAt(0).toUpperCase() + value.slice(1),
+        value.charAt(0).toUpperCase() + value.slice(1)
       );
     }
   }
 
   try {
-    const builds = await qb;
+    const builds = await qb.getMany();
 
     return response.status(200).json({
       numberOfBuilds: builds.length,

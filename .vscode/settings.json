@@ -1,10 +1,11 @@
 {
   "editor.formatOnSave": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.packageManager": "yarn",
-  "prettier.printWidth": 100,
-  "prettier.singleQuote": true,
   "files.eol": "\n",
-  "prettier.trailingComma": "es5",
-  "prettier.arrowParens": "always"
+  "eslint.format.enable": true,
+  "javascript.format.enable": false,
+  "html.format.enable": false,
+  "json.format.enable": false,
+  "typescript.format.enable": false,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.tabSize": 2
 }
