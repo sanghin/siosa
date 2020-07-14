@@ -18,11 +18,12 @@
       "Luc Tribolet <luc.tribolet@gmail.com> (https://tribolet.fr)"
    ],
    "scripts": {
-      "dev": "NODE_ENV=DEVELOPMENT ts-node server/index.ts",
-      "build": "next build",
-      "start": "ts-node server/index.ts",
-      "lint": "npx eslint . --ext .ts,.tsx",
-      "lint-fix": "npx eslint . --fix --ext .ts,.tsx"
+      "dev": "nodemon",
+      "build": "next build && ts-node --project tsconfig.server.json",
+      "start": "cross-env node dist/index.js",
+      "typeorm": "ts-node --project tsconfig.server.json ./node_modules/typeorm/cli.js",
+      "lint": "yarn eslint . --ext .ts,.tsx",
+      "lint-fix": "yarn eslint . --fix --ext .ts,.tsx"
    },
    "husky": {
       "hooks": {
@@ -36,10 +37,12 @@
    "dependencies": {
       "@babel/plugin-proposal-decorators": "^7.10.3",
       "@zeit/next-css": "^1.0.1",
+      "cross-env": "^7.0.2",
       "dotenv": "^8.2.0",
       "mysql": "^2.14.1",
       "next": "^9.4.4",
       "node-fetch": "^2.6.0",
+      "nodemon": "^2.0.4",
       "pg": "^8.2.1",
       "react": "^16.13.1",
       "react-dom": "^16.13.1",

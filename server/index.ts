@@ -1,12 +1,21 @@
+import "reflect-metadata";
+
 import { createServer, IncomingMessage, ServerResponse } from "http";
 import { parse } from "url";
 import next from "next";
+import { createConnection } from "typeorm";
+import * as config from "../ormconfig";
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
+app.prepare().then(async () => {
+  await createConnection({
+    ...config,
+    type: "postgres",
+  });
+
   createServer((request: IncomingMessage, response: ServerResponse) => {
     // Be sure to pass `true` as the second argument to `url.parse`.
     // This tells it to parse the query portion of the URL.

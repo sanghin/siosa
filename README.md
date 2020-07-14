@@ -2,25 +2,15 @@
 
 ## Requirement
 
-- Docker
+- [Docker](https://www.docker.com/)
+- [nvm](https://github.com/nvm-sh/nvm)
+- Node ^14.3.0
 
 ## Install
 
 ```
-docker-compose build
-docker-compose run --rm node yarn install
-docker-compose up -d
-```
-
-## Migrations
-
-```
-docker-compose run --rm node yarn knex migrate:latest
-```
-
-## Lint
-
-```
-docker-compose run --rm node yarn lint
-docker-compose run --rm node yarn lint-fix
+docker-compose -f docker-compose-db.yml up --build -d
+yarn install
+yarn typeorm migration:run
+yarn dev
 ```

@@ -11,10 +11,11 @@ module.exports = {
   database: process.env.POSTGRES_DB,
   cli: {
     migrationsDir: "./server/migration",
-    entitiesDir: "./server/entity/*.ts",
+    entitiesDir: "./server/entity",
   },
   migrationsRun: true,
   logging: true,
   namingStrategy: new SnakeNamingStrategy(),
-  entities: ["server/entity/*.ts"],
+  entities: ["server/entity/**/*.{ts,js}"],
+  migrations: ["server/migration/**/*.{ts,js}"],
 };

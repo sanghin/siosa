@@ -14,13 +14,13 @@ export default class Build {
   id: number;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt: number;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt: number;
 
   @DeleteDateColumn()
-  deletedAt: Date;
+  deletedAt: number;
 
   @VersionColumn()
   version: number;

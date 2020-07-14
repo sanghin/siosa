@@ -1,5 +1,3 @@
-import "reflect-metadata";
-
 import { getConnection } from "typeorm";
 import Build from "../../server/entity/Build";
 

@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "outDir": "dist",
+    "target": "esnext",
+    "isolatedModules": false,
+    "noEmit": false
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": ["server/**/*.ts", "next-env.d.ts", "siosa.d.ts"]
+}
